@@ -6,6 +6,12 @@ import pandas as pd
 from openai import OpenAI
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+
+# ===== 强制指定 .env 路径 =====
+env_path = r"D:\Python自动化\FileOrganizer\.env"
+load_dotenv(env_path)
 
 # 页面标题和图标
 st.set_page_config(page_title="AI 数据分析助手", page_icon="📊")
