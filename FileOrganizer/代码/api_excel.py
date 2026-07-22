@@ -9,7 +9,6 @@ app = FastAPI(title="Excel 分析 API", version="1.0")
 def root():
     return {"message": "Excel 分析 API 已启动，上传 Excel 文件进行分析"}
 
-
 @app.post("/analyze-excel")
 async def analyze_excel(file: UploadFile = File(...)):
     # 保存上传的文件
