@@ -16,7 +16,7 @@ client = OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
 KEYWORD_RULES = {
     "论文": ["论文", "毕业设计", "thesis", "开题报告", "参考文献"],
     "报告": ["报告", "汇报", "PPT", "presentation", "总结", "月报"],
-    "代码": [".py", ".js", ".java", ".c", ".cpp", "源码", "算法"],
+    "code": [".py", ".js", ".java", ".c", ".cpp", "源码", "算法"],
     "图片": [".jpg", ".png", ".gif", ".bmp", ".svg", "截图"],
     "财务": ["报销", "工资", "账单", "invoice", "发票", "银行"],
     "合同": ["合同", "协议", "agreement", "契约"]
