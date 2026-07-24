@@ -8,6 +8,27 @@ import matplotlib.pyplot as plt
 from openai import OpenAI
 from dotenv import load_dotenv
 
+# 获取系统所有字体
+fonts = [f.name for f in fm.fontManager.ttflist]
+
+# 常见中文字体候选（按优先级）
+candidate_fonts = ['WenQuanYi Zen Hei', 'Noto Sans CJK SC', 'Noto Sans CJK JP',
+                   'Microsoft YaHei', 'SimHei', 'Arial Unicode MS', 'DejaVu Sans']
+
+# 选择第一个在系统中存在的字体
+selected_font = None
+for font in candidate_fonts:
+    if font in fonts:
+        selected_font = font
+        break
+
+if selected_font:
+    plt.rcParams['font.sans-serif'] = [selected_font]
+    plt.rcParams['axes.unicode_minus'] = False
+    print(f"✅ 使用中文字体: {selected_font}")
+else:
+    print("⚠️ 未找到中文字体，图表中文可能显示为方块")
+
 load_dotenv()  # 本地开发时读取 .env
 
 app = FastAPI(title="Excel 智能分析 API", version="2.0")
