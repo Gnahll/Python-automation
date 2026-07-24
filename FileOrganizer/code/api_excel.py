@@ -5,6 +5,7 @@ import os
 import base64
 from io import BytesIO
 import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 from openai import OpenAI
 from dotenv import load_dotenv
 
